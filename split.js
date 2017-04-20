@@ -566,7 +566,9 @@
                 },
                 destroy: function () {
                     for (var i = 0; i < pairs.length; i++) {
-                        pairs[i].parent.removeChild(pairs[i].gutter)
+                        if (!options.gutter) {
+                            pairs[i].parent.removeChild(pairs[i].gutter)
+                        }
                         pairs[i].a.style[dimension] = ''
                         pairs[i].b.style[dimension] = ''
                     }
