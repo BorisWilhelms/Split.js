@@ -568,6 +568,10 @@
                     for (var i = 0; i < pairs.length; i++) {
                         if (!options.gutter) {
                             pairs[i].parent.removeChild(pairs[i].gutter)
+                        } else {
+                            pairs[i].gutter[removeEventListener]('mousedown');
+                            pairs[i].gutter[removeEventListener]('touchstart');
+                            pairs[i].gutter.removeAttribute('style');
                         }
                         pairs[i].a.style[dimension] = ''
                         pairs[i].b.style[dimension] = ''
